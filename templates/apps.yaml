@@ -1,3 +1,6 @@
+{{- $repoURL := .Values.spec.source.repoURL }}
+{{- $destServer := .Values.spec.destination.server }}
+{{- $syncPolicy := .Values.spec.syncPolicy }}
 {{- range .Values.students }}
 ---
 apiVersion: argoproj.io/v1alpha1
@@ -11,14 +14,14 @@ spec:
   project: default
   source:
     path: argocd/apps
-    repoURL: {{ .Values.spec.source.repoURL }}
+    repoURL: {{ $repoURL }}
     targetRevision: {{ . }}
   destination:
     namespace: default
-    server: {{ .Values.spec.destination.server }}
+    server: {{ $destServer }}
   syncPolicy:
     automated:
-      {{- if .Values.spec.syncPolicy }}
+      {{- if $syncPolicy }}
       prune: true
       {{- end }}
       selfHeal: true
