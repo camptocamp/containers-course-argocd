@@ -13,7 +13,7 @@ metadata:
 spec:
   project: default
   source:
-    path: argocd/apps
+    path: .
     repoURL: {{ $repoURL }}
     targetRevision: {{ . }}
   destination:
