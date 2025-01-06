@@ -1,20 +1,5 @@
-repositories:
-  - name: containers-course-app
-    url: https://github.com/camptocamp/containers-course-app.git
-
 releases:
-  - name: containers-course-app
-    chart: containers-course-app/helm/containers-course-app
-    version: "helm"
+  - name: app1
+    chart: ../../charts/containers-course-app
     values:
-      - ingress:
-          enabled: true
-          hosts:
-            - host: frontend.jacroute.apps.containers.campto.camp
-              paths:
-                - /
-          tls: []
-        metrics:
-          serviceMonitor:
-            additionalLabels:
-              release: prom
+      - "values.yaml"
