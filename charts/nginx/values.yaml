@@ -1,0 +1,14 @@
+image:
+  repository: ghcr.io/linuxserver/nginx
+  tag: latest
+
+nameOverride: ""
+fullnameOverride: ""
+
+ingress:
+  enabled: false
+  className: ""
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  host: chart-example.local

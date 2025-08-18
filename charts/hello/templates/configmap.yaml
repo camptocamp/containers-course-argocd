@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "hello.fullname" . }}
+  labels:
+    {{- include "hello.labels" . | nindent 4 }}
+data:
+  index.html: |
+    <h1>Hello</h1>
+    Kubernetes, often called K8s, is an open-source platform designed to automate the deployment, scaling, and management of containerized applications. It was originally developed at Google, inspired by the company’s internal system called Borg, which had been orchestrating containers at massive scale for years. In 2014, Google released Kubernetes to the open-source community, and it quickly became one of the most popular cloud-native projects. The project is now maintained by the Cloud Native Computing Foundation (CNCF), ensuring it evolves with contributions from thousands of developers worldwide. Kubernetes has become the de facto standard for container orchestration, supported by every major cloud provider. Its flexibility allows developers to run applications seamlessly across hybrid and multi-cloud environments. Today, Kubernetes continues to shape the way modern software is built and operated, empowering teams to innovate faster with reliable and scalable infrastructure.

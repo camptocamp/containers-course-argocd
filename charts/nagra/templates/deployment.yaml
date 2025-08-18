@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "nagra.fullname" . }}
+  labels:
+    {{- include "nagra.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "nagra.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "nagra.labels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: nagra
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          volumeMounts:
+            - name: webpage
+              mountPath: /config/www
+      volumes:
+        - name: webpage
+          configMap:
+            name: {{ include "nagra.fullname" . }}
