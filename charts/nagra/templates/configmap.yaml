@@ -6,7 +6,45 @@ metadata:
     {{- include "nagra.labels" . | nindent 4 }}
 data:
   index.html: |
-    <h1>From Switzerland to Hollywood: The Nagra Story</h1>
-    <p>The Nagra tape recorders, developed by Swiss engineer Stefan Kudelski in the late 1950s, became legendary in the world of professional audio. The first model, the Nagra I (1951), was followed by the more refined Nagra III in 1958, which set new standards for portable, high-fidelity recording. Their robust design, precision engineering, and reliability made them indispensable for journalists, scientists, and especially the film industry. By the 1960s and 1970s, Hollywood adopted Nagra recorders as the de facto standard for sync sound recording on set. The name “Nagra,” meaning “it will record” in Polish, came to symbolize trust and audio excellence worldwide. Even in the digital era, the legacy of Nagra endures as a benchmark for quality in location sound recording.</p>
-    <img src="https://images.unsplash.com/photo-1732400158812-6b0886331f5a" width="400px" >
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Stefan_Kudelski_by_Erling_Mandelmann.jpg">
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Nagra Story</title>
+      <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+      <h1>{{ .Values.title }}</h1>
+      <p>
+        The Nagra tape recorders, developed by Swiss engineer Stefan Kudelski in the late 1950s, became legendary in the world of professional audio.
+        The first model, the Nagra I (1951), was followed by the more refined Nagra III in 1958, which set new standards for portable, high-fidelity recording.
+        Their robust design, precision engineering, and reliability made them indispensable for journalists, scientists, and especially the film industry.
+        By the 1960s and 1970s, Hollywood adopted Nagra recorders as the de facto standard for sync sound recording on set.
+        The name “Nagra,” meaning “it will record” in Polish, came to symbolize trust and audio excellence worldwide.
+        Even in the digital era, the legacy of Nagra endures as a benchmark for quality in location sound recording.
+      </p>
+      <img src="https://images.unsplash.com/photo-1732400158812-6b0886331f5a" width="400px">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Stefan_Kudelski_by_Erling_Mandelmann.jpg">
+    </body>
+    </html>
+  styles.css: |
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: {{ .Values.style.background_color }};
+    }
+    h1 {
+      color: {{ .Values.style.heading_color }};
+      text-align: center;
+    }
+    p {
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+    img {
+      display: block;
+      margin: 20px auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
