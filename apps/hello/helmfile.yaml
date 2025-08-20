@@ -1,0 +1,5 @@
+releases:
+  - name: hello
+    chart: ../../charts/hello
+    values:
+      - "values.yaml"

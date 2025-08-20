@@ -1,5 +1,0 @@
-releases:
-  - name: app1
-    chart: ../../charts/containers-course-app
-    values:
-      - "values.yaml"
