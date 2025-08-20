@@ -1,5 +1,5 @@
 style:
-  background_color: '#869F82'
+  background_color: '#F6FFF2'
   heading_color: '#CA4B60'
 ingress:
   enabled: true
