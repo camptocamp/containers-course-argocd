@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: promotion-dev-jacroute
+  namespace: argocd
+spec:
+  generators:
+  - git:
+      directories:
+      - path: apps/*
+      repoURL: https://github.com/camptocamp/containers-course-argocd.git
+      revision: promotion-dev-jacroute
+  template:
+    metadata:
+      name: '{{path.basename}}-dev-jacroute'
+      labels:
+        user: jacroute
+    spec:
+      destination:
+        namespace: promotion-dev-jacroute
+        server: https://kubernetes.default.svc
+      project: default
+      source:
+        path: '{{path}}'
+        repoURL: https://github.com/camptocamp/containers-course-argocd.git
+        targetRevision: promotion-dev-jacroute
+      syncPolicy:
+        automated: {}
+        syncOptions:
+        - CreateNamespace=true
