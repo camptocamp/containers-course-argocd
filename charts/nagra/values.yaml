@@ -12,6 +12,7 @@ fullnameOverride: ""
 
 ingress:
   enabled: false
+  tls: false
   className: ""
   annotations: {}
     # kubernetes.io/ingress.class: nginx
