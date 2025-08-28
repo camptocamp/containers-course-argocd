@@ -8,4 +8,4 @@ ingress:
 metrics:
   serviceMonitor:
     additionalLabels:
-      release: prom
+      release: prometheus
