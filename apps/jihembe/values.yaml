@@ -1,9 +1,6 @@
 ingress:
   enabled: true
-  hosts:
-    - host: frontend.jihembe.apps.containers.campto.camp
-      paths:
-        - /
+  host: chart-example.local
   tls: []
 metrics:
   serviceMonitor:
