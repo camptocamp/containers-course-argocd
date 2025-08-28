@@ -1,6 +1,6 @@
 ingress:
   enabled: true
-  hosts:
+  host:
     - host: frontend.awada.apps.containers.campto.camp
       paths:
         - /
