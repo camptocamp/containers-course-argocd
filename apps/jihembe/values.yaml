@@ -1,0 +1,11 @@
+ingress:
+  enabled: true
+  hosts:
+    - host: frontend.jihembe.apps.containers.campto.camp
+      paths:
+        - /
+  tls: []
+metrics:
+  serviceMonitor:
+    additionalLabels:
+      release: prometheus
